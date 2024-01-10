@@ -8,5 +8,8 @@ os.execute("setxkbmap -option caps:escape")
 vim.g.neovide_transparency = 0.6
 vim.api.nvim_set_keymap('i', '<C-BS>', '<C-w>', { noremap = true, silent = true })
 vim.g.neovide_hide_mouse_when_typing = true
+vim.api.nvim_set_keymap('n', '<leader>tt',
+  [[:lua require('neo-tree.command').execute({action = 'focus', toggle = true})<CR>]],
+  { noremap = true, silent = true, desc = "[T]oggle File[t]ree" })
 
 return {}
