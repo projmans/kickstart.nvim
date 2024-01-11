@@ -11,5 +11,5 @@ vim.g.neovide_hide_mouse_when_typing = true
 vim.api.nvim_set_keymap('n', '<leader>tt',
   [[:lua require('neo-tree.command').execute({action = 'focus', toggle = true})<CR>]],
   { noremap = true, silent = true, desc = "[T]oggle File[t]ree" })
-
+vim.api.nvim_set_keymap('n', '<C-tab>', [[:bnext<CR>]], { noremap = true, silent = true })
 return {}
