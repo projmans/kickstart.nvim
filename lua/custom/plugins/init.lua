@@ -2,14 +2,15 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
+os.execute("setxkbmap -option caps:escape")
 vim.wo.relativenumber = true
 vim.g.neovide_fullscreen = true
-os.execute("setxkbmap -option caps:escape")
 vim.g.neovide_transparency = 0.6
-vim.api.nvim_set_keymap('i', '<C-BS>', '<C-w>', { noremap = true, silent = true })
 vim.g.neovide_hide_mouse_when_typing = true
+vim.api.nvim_set_keymap('i', '<C-BS>', '<C-w>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-tab>', [[:bnext<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>tt',
   [[:lua require('neo-tree.command').execute({action = 'focus', toggle = true})<CR>]],
   { noremap = true, silent = true, desc = "[T]oggle File[t]ree" })
-vim.api.nvim_set_keymap('n', '<C-tab>', [[:bnext<CR>]], { noremap = true, silent = true })
+
 return {}
