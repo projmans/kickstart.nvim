@@ -5,7 +5,7 @@
 os.execute("setxkbmap -option caps:escape")
 vim.wo.relativenumber = true
 vim.g.neovide_fullscreen = true
-vim.g.neovide_transparency = 0.6
+vim.g.neovide_transparency = 0.75
 vim.g.neovide_hide_mouse_when_typing = true
 vim.api.nvim_set_keymap('i', '<C-BS>', '<C-w>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-tab>', [[:bnext<CR>]], { noremap = true, silent = true })
