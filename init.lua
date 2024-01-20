@@ -194,11 +194,16 @@ require('lazy').setup({
     'navarasu/onedark.nvim',
     priority = 1000,
     config = function()
+      local transparency = false
+      if not vim.g.neovide then
+        -- Put anything you want to happen only in Neovide here
+        transparency = true
+      end
       require('onedark').setup {
         highlights = {
           ["@comment"] = { fg = '#bebebe', fmt = 'italic' },
         },
-
+        transparent = transparency
       }
       vim.cmd.colorscheme 'onedark'
     end,
