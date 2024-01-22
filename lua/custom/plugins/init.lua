@@ -9,9 +9,12 @@ os.execute("setxkbmap -option caps:escape")
 -- Add relative numbers
 vim.wo.relativenumber = true
 -- Neovide configs
-vim.g.neovide_fullscreen = true
-vim.g.neovide_transparency = 0.85
-vim.g.neovide_hide_mouse_when_typing = true
+if vim.g.neovide then
+  -- Put anything you want to happen only in Neovide here
+  vim.g.neovide_fullscreen = true
+  vim.g.neovide_transparency = 0.85
+  vim.g.neovide_hide_mouse_when_typing = true
+end
 -- Custom keybindings
 vim.api.nvim_set_keymap('i', '<C-BS>', '<C-w>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-tab>', [[:bnext<CR>]], { noremap = true, silent = true })
