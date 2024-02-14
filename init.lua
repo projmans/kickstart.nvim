@@ -193,6 +193,7 @@ require('lazy').setup({
     -- Theme inspired by Atom
     'navarasu/onedark.nvim',
     priority = 1000,
+    lazy = false,
     config = function()
       local transparency = false
       if not vim.g.neovide then
@@ -200,12 +201,14 @@ require('lazy').setup({
         transparency = true
       end
       require('onedark').setup {
+        -- Set a style preset. 'dark' is default.
+        style = 'dark', -- dark, darker, cool, deep, warm, warmer, light
+        transparent = transparency,
         highlights = {
           ["@comment"] = { fg = '#bebebe', fmt = 'italic' },
-        },
-        transparent = transparency
+        }, 
       }
-      vim.cmd.colorscheme 'onedark'
+      require('onedark').load()
     end,
   },
 
